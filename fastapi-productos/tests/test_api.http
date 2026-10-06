@@ -1,0 +1,100 @@
+@baseUrl = http://127.0.0.1:8000
+
+### =========================
+### CATEGORÍAS
+### =========================
+
+### Crear Categoría
+POST {{baseUrl}}/categorias/
+Content-Type: application/json
+
+{
+  "nombre": "Muebles de Oficina",
+  "descripcion": "Muebles de Oficina",
+  "activo": true
+}
+
+### Listar Categorías
+GET {{baseUrl}}/categorias/
+
+
+### Obtener Categoría
+GET {{baseUrl}}/categorias/3
+
+
+### Actualizar Categoría
+PUT {{baseUrl}}/categorias/3
+Content-Type: application/json
+
+{
+  "nombre": "Muebles Actualizados",
+  "descripcion": "Muebles de oficina actualizados"
+}
+
+
+### Eliminar Categoría
+DELETE {{baseUrl}}/categorias/3
+
+
+### =========================
+### PRODUCTOS
+### =========================
+
+### 1. Crear Producto
+POST {{baseUrl}}/productos/
+Content-Type: application/json
+
+{
+  "nombre": "Mesa de Oficina",
+  "descripcion": "Mesa para oficina",
+  "precio_base": 250.50,
+  "imagen_url": ["https://ejemplo.com/imagen.jpg"],
+  "disponible": true
+}
+
+
+### 2. Listar Productos
+GET {{baseUrl}}/productos/
+
+
+### 3. Obtener Producto
+GET {{baseUrl}}/productos/2
+
+
+### 4. Actualizar Producto
+PUT {{baseUrl}}/productos/2
+Content-Type: application/json
+
+{
+  "nombre": "Mesa de Oficina Actualizada",
+  "descripcion": "Mesa de oficina actualizada",
+  "precio_base": 280.50,
+  "imagen_url": [],
+  "disponible": true
+}
+
+
+### 5. Eliminar Producto
+DELETE {{baseUrl}}/productos/2
+
+
+### =========================
+### PRODUCTO - CATEGORIA
+### =========================
+
+### 6. Crear relación Producto-Categoría
+POST {{baseUrl}}/producto-categoria/
+Content-Type: application/json
+
+{
+  "producto_id": 4,
+  "categoria_id": 4
+}
+
+
+### 7. Listar relaciones
+GET {{baseUrl}}/producto-categoria/
+
+
+### 8. Eliminar relación
+DELETE {{baseUrl}}/producto-categoria/4/4
